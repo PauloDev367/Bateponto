@@ -16,7 +16,8 @@ Route::get('/', function () {
 });
 
 
-Route::get('/users', [ClockInController::class, 'users']);
+Route::get('/users', [ClockInController::class, 'users'])
+    ->name('users');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');

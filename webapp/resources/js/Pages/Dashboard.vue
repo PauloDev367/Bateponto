@@ -20,7 +20,7 @@ import { Head } from '@inertiajs/vue3';
             <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
                 <div class="text-right mb-3">
                     <button class="btn btn-sm btn-info" data-toggle="modal" data-target="#addNewUser">
-                        <i class="fa-regular fa-square-plus"></i> Cadastrar cliente
+                        <i class="fa-regular fa-square-plus"></i> Cadastrar usuário
                     </button>
                 </div>
                 <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">

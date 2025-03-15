@@ -1,10 +1,10 @@
 <template>
-    <div class="modal fade" id="addNewUser" tabindex="-1" role="dialog" aria-labelledby="addNewUserLabel"
+    <div class="modal fade" id="editUserInfo" tabindex="-1" role="dialog" aria-labelledby="editUserInfoLabel"
         aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="addNewUserLabel">Adicionar novo usuário</h5>
+                    <h5 class="modal-title" id="editUserInfoLabel">Atualizar dados do usuário</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -29,8 +29,8 @@
                     <button type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">
                         Cancelar
                     </button>
-                    <button type="button" class="btn btn-info btn-sm">
-                        <i class="fa-regular fa-square-plus"></i> Cadastrar usuário
+                    <button type="button" class="btn btn-warning btn-sm">
+                        <i class="fa-solid fa-pen-to-square"></i> Atualizar usuário
                     </button>
                 </div>
             </div>
