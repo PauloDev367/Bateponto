@@ -38,7 +38,7 @@ import EditUserInfo from '@/Components/EditUserInfo.vue';
                                     <td>jose@email.com</td>
                                     <td>01/02/2024 00:00:00</td>
                                     <td>
-                                        <a href="#" class="btn btn-sm btn-outline-info">
+                                        <a href="#" class="btn btn-sm btn-outline-success">
                                             <i class="fa-solid fa-image"></i>
                                         </a>
                                     </td>
@@ -62,7 +62,7 @@ import EditUserInfo from '@/Components/EditUserInfo.vue';
                                     <td>jose@email.com</td>
                                     <td>01/02/2024 00:00:00</td>
                                     <td>
-                                        <a href="#" class="btn btn-sm btn-outline-info">
+                                        <a href="#" class="btn btn-sm btn-outline-success">
                                             <i class="fa-solid fa-image"></i>
                                         </a>
                                     </td>
@@ -86,7 +86,7 @@ import EditUserInfo from '@/Components/EditUserInfo.vue';
                                     <td>jose@email.com</td>
                                     <td>01/02/2024 00:00:00</td>
                                     <td>
-                                        <a href="#" class="btn btn-sm btn-outline-info">
+                                        <a href="#" class="btn btn-sm btn-outline-success">
                                             <i class="fa-solid fa-image"></i>
                                         </a>
                                     </td>
@@ -110,7 +110,7 @@ import EditUserInfo from '@/Components/EditUserInfo.vue';
                                     <td>jose@email.com</td>
                                     <td>01/02/2024 00:00:00</td>
                                     <td>
-                                        <a href="#" class="btn btn-sm btn-outline-info">
+                                        <a href="#" class="btn btn-sm btn-outline-success">
                                             <i class="fa-solid fa-image"></i>
                                         </a>
                                     </td>
