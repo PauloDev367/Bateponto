@@ -35,6 +35,7 @@ import { Head } from '@inertiajs/vue3';
                                     <th>Status</th>
                                     <th>Horário</th>
                                     <th>Dentro do horário</th>
+                                    <th>Método de registro</th>
                                     <th>Ver foto</th>
                                 </tr>
                             </thead>
@@ -54,6 +55,11 @@ import { Head } from '@inertiajs/vue3';
                                         </span>
                                     </td>
                                     <td>
+                                        <span class="badge badge-secondary">
+                                            Foto
+                                        </span>
+                                    </td>
+                                    <td>
                                         <a href="#" class="btn btn-sm btn-outline-info">
                                             <i class="fa-solid fa-eye"></i>
                                         </a>
@@ -69,6 +75,11 @@ import { Head } from '@inertiajs/vue3';
                                     </td>
                                     <td>01/02/2024 09:03:00</td>
                                     <td>--</td>
+                                    <td>
+                                        <span class="badge badge-secondary">
+                                            Foto
+                                        </span>
+                                    </td>
                                     <td>
                                         <a href="#" class="btn btn-sm btn-outline-info">
                                             <i class="fa-solid fa-eye"></i>
@@ -87,6 +98,11 @@ import { Head } from '@inertiajs/vue3';
                                     <td>
                                         <span class="badge badge-warning">
                                             6 minuto(s) atrasado
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-secondary">
+                                            Manual
                                         </span>
                                     </td>
                                     <td>
@@ -110,6 +126,11 @@ import { Head } from '@inertiajs/vue3';
                                         </span>
                                     </td>
                                     <td>
+                                        <span class="badge badge-secondary">
+                                            Foto
+                                        </span>
+                                    </td>
+                                    <td>
                                         <a href="#" class="btn btn-sm btn-outline-info">
                                             <i class="fa-solid fa-eye"></i>
                                         </a>
@@ -125,6 +146,11 @@ import { Head } from '@inertiajs/vue3';
                                     </td>
                                     <td>01/02/2024 09:03:00</td>
                                     <td>--</td>
+                                    <td>
+                                        <span class="badge badge-secondary">
+                                            Manual
+                                        </span>
+                                    </td>
                                     <td>
                                         <a href="#" class="btn btn-sm btn-outline-info">
                                             <i class="fa-solid fa-eye"></i>
@@ -146,6 +172,11 @@ import { Head } from '@inertiajs/vue3';
                                         </span>
                                     </td>
                                     <td>
+                                        <span class="badge badge-secondary">
+                                            Foto
+                                        </span>
+                                    </td>
+                                    <td>
                                         <a href="#" class="btn btn-sm btn-outline-info">
                                             <i class="fa-solid fa-eye"></i>
                                         </a>
@@ -161,6 +192,11 @@ import { Head } from '@inertiajs/vue3';
                                     </td>
                                     <td>01/02/2024 09:03:00</td>
                                     <td>--</td>
+                                    <td>
+                                        <span class="badge badge-secondary">
+                                            Foto
+                                        </span>
+                                    </td>
                                     <td>
                                         <a href="#" class="btn btn-sm btn-outline-info">
                                             <i class="fa-solid fa-eye"></i>
@@ -179,6 +215,11 @@ import { Head } from '@inertiajs/vue3';
                                     <td>
                                         <span class="badge badge-warning">
                                             6 minuto(s) atrasado
+                                        </span>
+                                    </td>
+                                    <td>
+                                        <span class="badge badge-secondary">
+                                            Foto
                                         </span>
                                     </td>
                                     <td>
@@ -202,6 +243,11 @@ import { Head } from '@inertiajs/vue3';
                                         </span>
                                     </td>
                                     <td>
+                                        <span class="badge badge-secondary">
+                                            Foto
+                                        </span>
+                                    </td>
+                                    <td>
                                         <a href="#" class="btn btn-sm btn-outline-info">
                                             <i class="fa-solid fa-eye"></i>
                                         </a>
@@ -217,6 +263,11 @@ import { Head } from '@inertiajs/vue3';
                                     </td>
                                     <td>01/02/2024 09:03:00</td>
                                     <td>--</td>
+                                    <td>
+                                        <span class="badge badge-secondary">
+                                            Foto
+                                        </span>
+                                    </td>
                                     <td>
                                         <a href="#" class="btn btn-sm btn-outline-info">
                                             <i class="fa-solid fa-eye"></i>
