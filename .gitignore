@@ -5,3 +5,5 @@ __pycache__/
 .pytest_cache
 .env
 /facechecker/db.sqlite3
+/facechecker/uploads/
+/facechecker/.env
