@@ -29,3 +29,10 @@ class UserRegisterSerializer(serializers.ModelSerializer):
         if user:
             raise ValidationError('Este e-mail já está em uso!')
         return value
+
+
+class CheckUserImageSerializer(serializers.Serializer):
+    profile_picture = serializers.ImageField()
+    
+    class Meta:
+        fields = ['profile_picture']
