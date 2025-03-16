@@ -11,4 +11,9 @@ class ClockInController extends Controller
     {
         return Inertia::render('ClockIn/Users');
     }
+    
+    public function usersHistory(int $id)
+    {
+        return Inertia::render('ClockIn/UserHistory');
+    }
 }

@@ -30,7 +30,7 @@ import EditUserInfo from '@/Components/EditUserInfo.vue';
                             <tbody>
                                 <tr>
                                     <td>
-                                        <a href="#" class="text-info">
+                                        <a :href="route('users.history', 1)" class="text-info">
                                             <i class="fa-solid fa-magnifying-glass"></i>
                                             José
                                         </a>
@@ -54,7 +54,7 @@ import EditUserInfo from '@/Components/EditUserInfo.vue';
                                 </tr>
                                 <tr>
                                     <td>
-                                        <a href="#" class="text-info">
+                                        <a :href="route('users.history', 1)" class="text-info">
                                             <i class="fa-solid fa-magnifying-glass"></i>
                                             José
                                         </a>
@@ -78,7 +78,7 @@ import EditUserInfo from '@/Components/EditUserInfo.vue';
                                 </tr>
                                 <tr>
                                     <td>
-                                        <a href="#" class="text-info">
+                                        <a :href="route('users.history', 1)" class="text-info">
                                             <i class="fa-solid fa-magnifying-glass"></i>
                                             José
                                         </a>
@@ -102,7 +102,7 @@ import EditUserInfo from '@/Components/EditUserInfo.vue';
                                 </tr>
                                 <tr>
                                     <td>
-                                        <a href="#" class="text-info">
+                                        <a :href="route('users.history', 1)" class="text-info">
                                             <i class="fa-solid fa-magnifying-glass"></i>
                                             José
                                         </a>
