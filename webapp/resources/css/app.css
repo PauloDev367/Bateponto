@@ -2,10 +2,74 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 .user-page-image {
     width: 100%;
     display: inline-block;
     border: 2px solid #000;
+}
+
+.camera {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    margin: auto;
+    border: 2px solid #000;
+}
+
+video,
+canvas {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+
+.overlay {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+button:disabled {
+    background: gray;
+    cursor: not-allowed;
+}
+
+.home-area {
+    background-color: #f7f7f7;
+    height: 100vh;
+    padding: 20px 0;
+}
+
+.home-area h1 {
+    margin: 20px 0;
+    font-size: 1.8rem;
+}
+
+
+.home-area .container{
+    background-color: #fff;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 5px;
+}
+
+.home-area .area-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 475px) {
+    .camera {
+        width: 100%;
+        height: 400px;
+    }
 }
