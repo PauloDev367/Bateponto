@@ -2,6 +2,7 @@
 import AuthenticatedLayout from '@/Layouts/AuthenticatedLayout.vue';
 import AddNewUser from '@/Components/AddNewUser.vue';
 import EditUserInfo from '@/Components/EditUserInfo.vue';
+import UserTr from '@/Components/Users/UserTr.vue';
 </script>
 
 <template>
@@ -15,7 +16,7 @@ import EditUserInfo from '@/Components/EditUserInfo.vue';
                 </div>
                 <div class="overflow-hidden bg-white shadow-sm sm:rounded-lg">
                     <div class="p-6 text-gray-900">
-                        <h5 class="mb-4">Últimas atividades registradas</h5>
+                        <h5 class="mb-4">Usuários registrados</h5>
 
                         <table class="table">
                             <thead>
@@ -28,103 +29,7 @@ import EditUserInfo from '@/Components/EditUserInfo.vue';
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>
-                                        <a :href="route('users.history', 1)" class="text-info">
-                                            <i class="fa-solid fa-magnifying-glass"></i>
-                                            José
-                                        </a>
-                                    </td>
-                                    <td>jose@email.com</td>
-                                    <td>01/02/2024 00:00:00</td>
-                                    <td>
-                                        <a href="#" class="btn btn-sm btn-outline-success">
-                                            <i class="fa-solid fa-image"></i>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <a href="#" class="btn btn-sm btn-outline-warning mr-2"
-                                        data-toggle="modal" data-target="#editUserInfo">
-                                            <i class="fa-solid fa-pen-to-square"></i>
-                                        </a>
-                                        <a href="#" class="btn btn-sm btn-outline-danger">
-                                            <i class="fa-solid fa-trash-can"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a :href="route('users.history', 1)" class="text-info">
-                                            <i class="fa-solid fa-magnifying-glass"></i>
-                                            José
-                                        </a>
-                                    </td>
-                                    <td>jose@email.com</td>
-                                    <td>01/02/2024 00:00:00</td>
-                                    <td>
-                                        <a href="#" class="btn btn-sm btn-outline-success">
-                                            <i class="fa-solid fa-image"></i>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <a href="#" class="btn btn-sm btn-outline-warning mr-2"
-                                        data-toggle="modal" data-target="#editUserInfo">
-                                            <i class="fa-solid fa-pen-to-square"></i>
-                                        </a>
-                                        <a href="#" class="btn btn-sm btn-outline-danger">
-                                            <i class="fa-solid fa-trash-can"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a :href="route('users.history', 1)" class="text-info">
-                                            <i class="fa-solid fa-magnifying-glass"></i>
-                                            José
-                                        </a>
-                                    </td>
-                                    <td>jose@email.com</td>
-                                    <td>01/02/2024 00:00:00</td>
-                                    <td>
-                                        <a href="#" class="btn btn-sm btn-outline-success">
-                                            <i class="fa-solid fa-image"></i>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <a href="#" class="btn btn-sm btn-outline-warning mr-2"
-                                        data-toggle="modal" data-target="#editUserInfo">
-                                            <i class="fa-solid fa-pen-to-square"></i>
-                                        </a>
-                                        <a href="#" class="btn btn-sm btn-outline-danger">
-                                            <i class="fa-solid fa-trash-can"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <a :href="route('users.history', 1)" class="text-info">
-                                            <i class="fa-solid fa-magnifying-glass"></i>
-                                            José
-                                        </a>
-                                    </td>
-                                    <td>jose@email.com</td>
-                                    <td>01/02/2024 00:00:00</td>
-                                    <td>
-                                        <a href="#" class="btn btn-sm btn-outline-success">
-                                            <i class="fa-solid fa-image"></i>
-                                        </a>
-                                    </td>
-                                    <td>
-                                        <a href="#" class="btn btn-sm btn-outline-warning mr-2"
-                                        data-toggle="modal" data-target="#editUserInfo">
-                                            <i class="fa-solid fa-pen-to-square"></i>
-                                        </a>
-                                        <a href="#" class="btn btn-sm btn-outline-danger">
-                                            <i class="fa-solid fa-trash-can"></i>
-                                        </a>
-                                    </td>
-                                </tr>
-                                
+                                <UserTr />
                             </tbody>
                         </table>
                     </div>
