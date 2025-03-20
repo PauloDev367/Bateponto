@@ -20,8 +20,8 @@ ALLOWED_HOSTS = []
 # Configurações do AWS S3
 AWS_ACCESS_KEY_ID = os.getenv('AWS_ACCESS_KEY')
 AWS_SECRET_ACCESS_KEY = os.getenv('AWS_SECRET_KEY')
-AWS_STORAGE_BUCKET_NAME = 'bucketfacechecker'  # Nome do bucket criado na AWS
-AWS_S3_REGION_NAME = 'us-east-2'  # Substitua pela região do seu bucket
+AWS_STORAGE_BUCKET_NAME = 'bucketfacechecker'
+AWS_S3_REGION_NAME = 'us-east-2'
 AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
 
 # Configuração do armazenamento de mídia no S3
