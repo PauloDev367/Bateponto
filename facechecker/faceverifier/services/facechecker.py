@@ -1,6 +1,8 @@
 import face_recognition
 import numpy as np
 from faceverifier.models import ApplicationUser
+from urllib.request import urlopen
+from io import BytesIO
 
 class FaceCheck:
     def __init__(self):
@@ -10,16 +12,23 @@ class FaceCheck:
     def __load_registered_faces(self):
         registered_faces = []
         nomes = []
-        
+
         for usuario in self.users:
-            caminho_imagem = usuario.profile_picture.path
-            imagem = face_recognition.load_image_file(caminho_imagem)
-            codificacoes = face_recognition.face_encodings(imagem)
-            
-            if codificacoes:
-                registered_faces.append(codificacoes[0])
-                nomes.append(usuario.username)
-        
+            if usuario.profile_picture:
+                url_imagem = usuario.profile_picture.url
+                
+                with urlopen(url_imagem) as response:
+                    imagem_bytes = response.read()
+                    imagem_stream = BytesIO(imagem_bytes)
+                
+                imagem = face_recognition.load_image_file(imagem_stream)
+                
+                codificacoes = face_recognition.face_encodings(imagem)
+                
+                if codificacoes:
+                    registered_faces.append(codificacoes[0])
+                    nomes.append(usuario.username)
+
         return registered_faces, nomes
     
     def verificar_rosto(self, imagem_teste):
