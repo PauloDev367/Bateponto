@@ -34,7 +34,7 @@ class CheckImageView(APIView):
             
             if verification is None:
                 return Response({"message": "Usuário não encontrado"}, status=status.HTTP_404_NOT_FOUND)
-            return Response({"message": f"O usuário é o {verification}"}, status=status.HTTP_200_OK)
+            return Response({"message": f"O usuário verificado", "data": verification}, status=status.HTTP_200_OK)
         
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

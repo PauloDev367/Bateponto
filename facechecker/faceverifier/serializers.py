@@ -20,7 +20,7 @@ class UserRegisterSerializer(serializers.ModelSerializer):
     
     class Meta:
         model = ApplicationUser
-        fields = ['email', 'password', 'name', 'profile_picture']
+        fields = ['email', 'password', 'name', 'profile_picture', 'user_webapp_id']
   
     def create(self, validated_data):
         faceCheck =FaceCheck()
@@ -35,6 +35,7 @@ class UserRegisterSerializer(serializers.ModelSerializer):
                 password=validated_data['password'],
                 username=f"{uuid.uuid4()}_{slugify(validated_data['name'])}",
                 name=validated_data['name'],
+                user_webapp_id=validated_data['user_webapp_id']
             )
 
             if profile_picture:

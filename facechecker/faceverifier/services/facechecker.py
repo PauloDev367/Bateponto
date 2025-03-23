@@ -14,7 +14,7 @@ class FaceCheck:
     def __init__(self):
         self.users = ApplicationUser.objects.all()
         self.__limpar_cache_expirado()
-        self.registered_faces, self.registered_names = self.__load_registered_faces()
+        self.registered_faces, self.registered_names, self.user_ids, self.user_webapp_ids = self.__load_registered_faces()
 
     def __limpar_cache_expirado(self):
         if not os.path.exists(CACHE_DIR):
@@ -30,7 +30,9 @@ class FaceCheck:
     def __load_registered_faces(self):
         registered_faces = []
         nomes = []
-
+        ids = []
+        user_webapp_ids = []
+        
         for usuario in self.users:
             if usuario.profile_picture:
                 image_filename = f"{CACHE_DIR}/{usuario.username}.jpg"
@@ -47,8 +49,10 @@ class FaceCheck:
                 if codificacoes:
                     registered_faces.append(codificacoes[0])
                     nomes.append(usuario.name)
+                    ids.append(usuario.id)
+                    user_webapp_ids.append(usuario.user_webapp_id)
 
-        return registered_faces, nomes
+        return registered_faces, nomes, ids, user_webapp_ids
 
     def verificar_rosto(self, imagem_teste):
         imagem = face_recognition.load_image_file(imagem_teste)
@@ -65,6 +69,10 @@ class FaceCheck:
             indice = np.argmin(distancias)
             limite_distancia = 0.6
             if distancias[indice] < limite_distancia:
-                return self.registered_names[indice]
+                return {
+                    "username": self.registered_names[indice],
+                    "user_id": self.user_ids[indice],
+                    "user_webapp_id": self.user_webapp_ids[indice]
+                }
 
         return None
