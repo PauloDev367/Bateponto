@@ -2,13 +2,14 @@
 
 namespace App\Services;
 
-use App\Http\Requests\CreateUserRequest;
 use CURLFile;
+use App\Http\Requests\CreateUserRequest;
 use Illuminate\Container\Attributes\Cache;
+use App\Http\Requests\CheckUserImageRequest;
 use Illuminate\Support\Facades\Cache as FacadesCache;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpFoundation\Exception\BadRequestException;
 use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class FacecheckerService
 {
@@ -96,5 +97,35 @@ class FacecheckerService
     }
 
 
-    public function checkImage() {}
+    public function checkImage(CheckUserImageRequest $request)
+    {
+        $profilePicture = $request->file('file');
+
+        $data = [
+            'profile_picture' => new CURLFile($profilePicture->getPathname(), $profilePicture->getMimeType(), $profilePicture->getClientOriginalName())
+        ];
+
+        $curl = curl_init();
+
+        curl_setopt_array($curl, [
+            CURLOPT_URL => $this->baseUrl . '/user/check/',
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_POST => true,
+            CURLOPT_POSTFIELDS => $data,
+            CURLOPT_HTTPHEADER => [
+                'Content-Type: multipart/form-data',
+            ],
+        ]);
+
+        $response = curl_exec($curl);
+
+        curl_close($curl);
+
+        $data = json_decode($response, true);
+        if (!isset($data['message'])) {
+            throw new BadRequestHttpException('Dados inválidos! Verifique se o usuário está cadastrado no sistema');
+        }
+        $userName = $data['message'];
+        return $userName;
+    }
 }

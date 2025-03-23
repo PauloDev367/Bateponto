@@ -22,7 +22,6 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="modalEnviarFotoLabel">Foto capturada</h5>
-                    <!-- Removendo o botão de fechar (×) -->
                 </div>
                 <div class="modal-body">
                     <img :src="capturedImage" alt="Captura" class="w-100" />
@@ -30,7 +29,7 @@
                 <div class="modal-footer">
                     <button type="button" @click="cancelClockIn" class="btn btn-sm btn-secondary"
                         data-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-sm btn-info">Bater ponto</button>
+                    <button type="button" @click="submitClockIn" class="btn btn-sm btn-info">Bater ponto</button>
                 </div>
             </div>
         </div>
@@ -39,12 +38,15 @@
 
 
 <script setup>
+import { useToastr } from "@/Services/toastr";
+import axios from "axios";
 import { ref } from "vue";
 
 const video = ref(null);
 const canvas = ref(null);
 const capturedImage = ref(null);
 const isCameraOn = ref(false);
+const toastr = useToastr();
 let stream = null;
 
 const startCamera = async () => {
@@ -85,4 +87,38 @@ const captureImage = () => {
 const cancelClockIn = () => {
     window.location.reload();
 }
+const submitClockIn = async () => {
+    if (!capturedImage.value) {
+        toastr.error('Nenhuma imagem capturada.');
+        return;
+    }
+
+    const byteString = atob(capturedImage.value.split(',')[1]);
+    const mimeString = capturedImage.value.split(',')[0].split(':')[1].split(';')[0];
+
+    const arrayBuffer = new ArrayBuffer(byteString.length);
+    const uint8Array = new Uint8Array(arrayBuffer);
+    for (let i = 0; i < byteString.length; i++) {
+        uint8Array[i] = byteString.charCodeAt(i);
+    }
+
+    const file = new File([arrayBuffer], "captura.png", { type: mimeString });
+
+    const formData = new FormData();
+    formData.append('file', file);
+
+    try {
+        const response = await axios.post(route('clockin'), formData, {
+            headers: { 'Content-Type': 'multipart/form-data' }
+        });
+
+        alert('Ponto batido com sucesso');
+        window.location.reload();
+    } catch (error) {
+        toastr.error('Erro ao tentar verificar usuário.');
+        console.error(error);
+        window.location.reload();
+    }
+};
+
 </script>
