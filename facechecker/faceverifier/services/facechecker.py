@@ -17,7 +17,6 @@ class FaceCheck:
         self.registered_faces, self.registered_names = self.__load_registered_faces()
 
     def __limpar_cache_expirado(self):
-        """Remove imagens do cache que passaram do tempo limite."""
         if not os.path.exists(CACHE_DIR):
             os.makedirs(CACHE_DIR)
             return
@@ -47,7 +46,7 @@ class FaceCheck:
 
                 if codificacoes:
                     registered_faces.append(codificacoes[0])
-                    nomes.append(usuario.username)
+                    nomes.append(usuario.name)
 
         return registered_faces, nomes
 
