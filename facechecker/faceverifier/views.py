@@ -5,6 +5,7 @@ from rest_framework.response import Response
 from .serializers import LoginSerializer, UserRegisterSerializer, CheckUserImageSerializer
 from .services.authentication import Authenticator
 from .services.facechecker import FaceCheck
+from .services.clockinservice import ClockInService
 
 class LoginView(APIView):
    def post(self, request):
@@ -32,8 +33,12 @@ class CheckImageView(APIView):
 
             verification = faceCheck.verificar_rosto(profile_picture)
             
+            clockinservice = ClockInService()
             if verification is None:
+                clockinservice.save_clockin(serializer.validated_data['profile_picture'], 'Não confirmado', 'Foto', None)
                 return Response({"message": "Usuário não encontrado"}, status=status.HTTP_404_NOT_FOUND)
+            
+            clockinservice.save_clockin(serializer.validated_data['profile_picture'], 'Confirmado', 'Foto', verification['user_id'])
             return Response({"message": f"O usuário verificado", "data": verification}, status=status.HTTP_200_OK)
         
         else:
